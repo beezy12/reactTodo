@@ -1,20 +1,36 @@
 import React, { Component } from 'react';
-import AddTodo from './AddTodo'
+import AddTodo from './AddTodo';
+import TodoList from './TodoList';
 
 export default class TodoApp extends Component {
-  state = {
-    todos: []
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      todo: ''
+    }
+
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleAddTodo = (todo) => {
 
-    this.setState(() => {})
+  handleChange(todo) {
+    console.log('click in the parent')
+    console.log(todo)
+    this.setState({ todo });
   }
 
   render() {
+
+    const todo = this.state.todo;
+
     return (
       <div>
-        <AddTodo handleAddTodo={this.handleAddTodo} />
+        <AddTodo 
+          handleChange={this.handleChange}
+          todo={todo} 
+        />
+        <TodoList />
       </div>
     );
   }

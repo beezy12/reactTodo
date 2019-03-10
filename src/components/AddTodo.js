@@ -13,28 +13,29 @@ export default class AddTodo extends Component {
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
+    this.props.handleChange(event.target.value);
   }
 
   handleAddTodo(event) {
-    //console.log(event)
+    //console.log(event);
     event.preventDefault();
 
-    console.log(`I received this ${this.state.value}`)
+    console.log(`I received this: ${this.props.todo}`);
   }
 
   render() {
-    const todo = this.state.value;
+    const todo = this.props.todo;
 
     return (
       <div>
         <form onSubmit={this.handleAddTodo}>
           <label>
             Add a todo here:
-            <input type="text" name="todo" value={this.state.value} onChange={this.handleChange} />
+            <input type="text" name="todo" value={this.props.todo} onChange={this.handleChange} />
           </label>
           <input type="submit" value="Submit" />
         </form>
+
         {todo}
       </div>
     );
