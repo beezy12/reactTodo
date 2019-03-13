@@ -10,11 +10,6 @@ export default class AddTodo extends Component {
 
     this.input = React.createRef();
     this.handleAddTodo = this.handleAddTodo.bind(this);
-    //this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    //this.props.handleChange(event.target.value);
   }
 
   handleAddTodo(event) {
@@ -22,7 +17,8 @@ export default class AddTodo extends Component {
     event.preventDefault();
 
     //console.log(`I received this: ${this.input.current.value}`);
-    this.props.handleAddTodo(this.input.current.value);
+    this.props.handleAddTodo(this.input.current.value.trim());
+    this.input.current.value = '';
   }
 
   render() {
