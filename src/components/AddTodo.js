@@ -8,35 +8,33 @@ export default class AddTodo extends Component {
       value: ''
     }
 
+    this.input = React.createRef();
     this.handleAddTodo = this.handleAddTodo.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    //this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    this.props.handleChange(event.target.value);
+    //this.props.handleChange(event.target.value);
   }
 
   handleAddTodo(event) {
     //console.log(event);
     event.preventDefault();
 
-    console.log(`I received this: ${this.props.todo}`);
+    //console.log(`I received this: ${this.input.current.value}`);
+    this.props.handleAddTodo(this.input.current.value);
   }
 
   render() {
-    const todo = this.props.todo;
-
     return (
       <div>
         <form onSubmit={this.handleAddTodo}>
           <label>
             Add a todo here:
-            <input type="text" name="todo" value={this.props.todo} onChange={this.handleChange} />
+            <input type="text" ref={this.input} />
           </label>
           <input type="submit" value="Submit" />
         </form>
-
-        {todo}
       </div>
     );
   }

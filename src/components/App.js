@@ -7,30 +7,38 @@ export default class TodoApp extends Component {
     super(props)
 
     this.state = {
-      todo: ''
+      todos: []
     }
 
     this.handleChange = this.handleChange.bind(this);
   }
 
 
-  handleChange(todo) {
-    console.log('click in the parent')
-    console.log(todo)
-    this.setState({ todo });
+  handleChange = (todo) => {
+    //console.log('click in the parent')
+    //console.log('handle change is getting this:', todo)
+    //this.setState(prevState => ({ todos: prevState.todos.concat(todo) }))
+    //this.setState(prevState => ({...prevState.todos, todo }))
+  }
+
+  handleAddTodo = (thing) => {
+    console.log('handleAddTodo in the main parent is getting this:', thing);
+    //this.setState(prevState => ({...prevState.todos, thing }));
+    this.setState(prevState => ({ todos: prevState.todos.concat(thing) }))
   }
 
   render() {
 
-    const todo = this.state.todo;
+    const todos = this.state.todos;
+    console.log('and my state looks like this', todos);
 
     return (
       <div>
         <AddTodo 
-          handleChange={this.handleChange}
-          todo={todo} 
+          handleAddTodo={this.handleAddTodo}
+          todos={todos} 
         />
-        <TodoList />
+        <TodoList todos={todos} />
       </div>
     );
   }
