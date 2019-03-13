@@ -22,6 +22,10 @@ export default class TodoApp extends Component {
     }))
   }
 
+  handleDeleteAll = () => {
+    this.setState(() => ({ todos: []}));
+  }
+
   render() {
     const title = 'Organize Your Life'
     const todos = this.state.todos;
@@ -36,6 +40,7 @@ export default class TodoApp extends Component {
         <TodoList 
           todos={todos}
           handleDeleteTodo={this.handleDeleteTodo}
+          handleDeleteAll={this.handleDeleteAll}
         />
       </div>
     );

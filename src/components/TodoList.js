@@ -11,6 +11,7 @@ const TodoList = (props) => (
         handleDeleteTodo={props.handleDeleteTodo}
       />
     ))}
+    {props.todos.length > 1 && <button onClick={props.handleDeleteAll}>REMOVE ALL TODOS</button>}
   </div>
 )
 

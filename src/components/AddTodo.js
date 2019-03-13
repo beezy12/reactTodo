@@ -13,10 +13,8 @@ export default class AddTodo extends Component {
   }
 
   handleAddTodo(event) {
-    //console.log(event);
     event.preventDefault();
 
-    //console.log(`I received this: ${this.input.current.value}`);
     this.props.handleAddTodo(this.input.current.value.trim());
     this.input.current.value = '';
   }
