@@ -24,7 +24,6 @@ export default class AddTodo extends Component {
       <div>
         <form onSubmit={this.handleAddTodo}>
           <label>
-            Add a todo here:
             <input type="text" ref={this.input} />
           </label>
           <input type="submit" value="Submit" />

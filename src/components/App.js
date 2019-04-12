@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AddTodo from './AddTodo';
 import TodoList from './TodoList';
+import '../styles/styles.scss';
 
 export default class TodoApp extends Component {
   constructor(props) {
@@ -13,13 +14,13 @@ export default class TodoApp extends Component {
 
   handleAddTodo = (thing) => {
     //this.setState(prevState => ({...prevState.todos, thing }));
-    this.setState(prevState => ({ todos: prevState.todos.concat(thing) }))
+    this.setState(prevState => ({ todos: prevState.todos.concat(thing) }));
   }
 
   handleDeleteTodo = (todoToDelete) => {
     this.setState((prevState) => ({
       todos: prevState.todos.filter((currentOne) => currentOne !== todoToDelete)
-    }))
+    }));
   }
 
   handleDeleteAll = () => {
@@ -27,7 +28,7 @@ export default class TodoApp extends Component {
   }
 
   render() {
-    const title = 'Organize Your Life'
+    const title = 'Organize Your Life....one little To-Do at a time';
     const todos = this.state.todos;
     console.log('my state looks like this', todos);
 

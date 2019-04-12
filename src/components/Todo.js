@@ -2,7 +2,7 @@ import React from 'react';
 
 const Todo = (props) => (
   <div>
-    <p>{props.todo}
+    <p>{props.count}. {props.todo}
       <button onClick={(event) => {
         props.handleDeleteTodo(props.todo)
       }}>
