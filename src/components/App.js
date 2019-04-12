@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+
 import AddTodo from './AddTodo';
+import Header from './Header';
 import TodoList from './TodoList';
 import '../styles/styles.scss';
 
@@ -28,21 +30,23 @@ export default class TodoApp extends Component {
   }
 
   render() {
-    const title = 'Organize Your Life....one little To-Do at a time';
     const todos = this.state.todos;
     console.log('my state looks like this', todos);
+    const subtitle = 'one little thing at a time...';
 
     return (
       <div>
-        {title}
-        <AddTodo 
-          handleAddTodo={this.handleAddTodo}
-        />
-        <TodoList 
-          todos={todos}
-          handleDeleteTodo={this.handleDeleteTodo}
-          handleDeleteAll={this.handleDeleteAll}
-        />
+        <Header subtitle={subtitle} />
+        <div className='container'>
+          <AddTodo
+            handleAddTodo={this.handleAddTodo}
+          />
+          <TodoList
+            todos={todos}
+            handleDeleteTodo={this.handleDeleteTodo}
+            handleDeleteAll={this.handleDeleteAll}
+          />
+        </div>
       </div>
     );
   }

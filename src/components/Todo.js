@@ -10,6 +10,6 @@ const Todo = (props) => (
       </button>
     </p>
   </div>
-)
+);
 
 export default Todo;

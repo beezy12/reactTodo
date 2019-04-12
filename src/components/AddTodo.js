@@ -22,7 +22,7 @@ export default class AddTodo extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleAddTodo}>
+        <form className='add-option' onSubmit={this.handleAddTodo}>
           <label>
             <input type="text" ref={this.input} />
           </label>

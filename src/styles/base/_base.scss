@@ -5,7 +5,17 @@
 
 // BE SURE TO RESET BROWSER STYLES USING NORMALIZE
 
+html {
+  font-size: 62.5%;
+}
 
 body {
-  background: blue;
+  background: $dark-blue;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: $m-size;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
 }

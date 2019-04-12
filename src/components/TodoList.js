@@ -14,6 +14,6 @@ const TodoList = (props) => (
     ))}
     {props.todos.length > 1 && <button onClick={props.handleDeleteAll}>REMOVE ALL TODOS</button>}
   </div>
-)
+);
 
 export default TodoList;
