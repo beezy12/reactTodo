@@ -1,0 +1,11 @@
+// 1rem = 16px
+// so by setting this to 62.5 -> 16*.625 = 10. so now we're working in base 10
+// so 2.2rem = 22px.
+// 1.6rem = 16px, which is normal sized
+
+// BE SURE TO RESET BROWSER STYLES USING NORMALIZE
+
+
+body {
+  background: blue;
+}
