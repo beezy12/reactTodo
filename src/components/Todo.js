@@ -1,14 +1,15 @@
 import React from 'react';
 
 const Todo = (props) => (
-  <div>
-    <p>{props.count}. {props.todo}
-      <button onClick={(event) => {
+  <div className='todo'>
+    <p className='todo__text'>{props.count}. {props.todo}</p>
+    <button 
+      className='button button--link'
+      onClick={(event) => {
         props.handleDeleteTodo(props.todo)
       }}>
-        Remove
-      </button>
-    </p>
+      remove
+    </button>
   </div>
 );
 

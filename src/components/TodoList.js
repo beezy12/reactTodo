@@ -5,7 +5,13 @@ const TodoList = (props) => (
   <div>
     <div className='widget-header'>
       <h3 className='widget-header__title'>Your To-Dos</h3>
-      {props.todos.length > 1 && <button onClick={props.handleDeleteAll}>remove all tasks</button>}
+      {props.todos.length > 1 && 
+      <button
+        className='button button--link'
+        onClick={props.handleDeleteAll}
+      >
+        remove all tasks
+      </button>}
     </div>
     {props.todos.length === 0 && <p className='widget__message'>Add something to do!</p>}
     {props.todos.map((todo, index) => (
