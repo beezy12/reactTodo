@@ -24,7 +24,7 @@ export default class AddTodo extends Component {
       <div>
         <form className='add-option' onSubmit={this.handleAddTodo}>
           <input className='add-option__input' type="text" name='option' ref={this.input} />
-          <button className='button'>Add Option</button>
+          <button className='button'>Add Task</button>
         </form>
       </div>
     );

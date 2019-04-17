@@ -4,7 +4,7 @@ import Todo from './Todo.js';
 const TodoList = (props) => (
   <div>
     <div className='widget-header'>
-      <h3 className='widget-header__title'>Your To-Dos</h3>
+      <h3 className='widget-header__title'>Your Tasks</h3>
       {props.todos.length > 1 && 
       <button
         className='button button--link'
