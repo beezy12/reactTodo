@@ -38,14 +38,16 @@ export default class TodoApp extends Component {
       <div>
         <Header subtitle={subtitle} />
         <div className='container'>
-          <AddTodo
-            handleAddTodo={this.handleAddTodo}
-          />
-          <TodoList
-            todos={todos}
-            handleDeleteTodo={this.handleDeleteTodo}
-            handleDeleteAll={this.handleDeleteAll}
-          />
+          <div className='widget'>
+            <TodoList
+              todos={todos}
+              handleDeleteTodo={this.handleDeleteTodo}
+              handleDeleteAll={this.handleDeleteAll}
+            />
+            <AddTodo
+              handleAddTodo={this.handleAddTodo}
+            />
+          </div>
         </div>
       </div>
     );

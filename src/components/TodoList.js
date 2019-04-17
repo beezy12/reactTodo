@@ -3,7 +3,11 @@ import Todo from './Todo.js';
 
 const TodoList = (props) => (
   <div>
-    {props.todos.length === 0 && <p>Add something to do!</p>}
+    <div className='widget-header'>
+      <h3 className='widget-header__title'>Your To-Dos</h3>
+      {props.todos.length > 1 && <button onClick={props.handleDeleteAll}>remove all tasks</button>}
+    </div>
+    {props.todos.length === 0 && <p className='widget__message'>Add something to do!</p>}
     {props.todos.map((todo, index) => (
       <Todo
         key={index} 
@@ -12,7 +16,6 @@ const TodoList = (props) => (
         count={index + 1}
       />
     ))}
-    {props.todos.length > 1 && <button onClick={props.handleDeleteAll}>REMOVE ALL TODOS</button>}
   </div>
 );
 
