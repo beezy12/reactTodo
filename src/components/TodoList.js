@@ -19,6 +19,7 @@ const TodoList = (props) => (
         key={index} 
         todo={todo}
         handleDeleteTodo={props.handleDeleteTodo}
+        markTodoDone={props.markTodoDone}
         count={index + 1}
       />
     ))}

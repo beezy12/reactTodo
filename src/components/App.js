@@ -9,7 +9,7 @@ export default class TodoApp extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      todos: []
+    todos: []
     }
     this.handleAddTodo = this.handleAddTodo.bind(this);
   }
@@ -20,14 +20,20 @@ export default class TodoApp extends Component {
   }
 
   handleDeleteTodo = (todoToDelete) => {
+    console.log(todoToDelete)
     this.setState((prevState) => ({
       todos: prevState.todos.filter((currentOne) => currentOne !== todoToDelete)
     }));
   }
 
   handleDeleteAll = () => {
-    this.setState(() => ({ todos: []}));
+    this.setState(() => ({ todos: [] }));
   }
+
+  markTodoDone = () => {
+    console.log('marked as done')
+  }
+
 
   render() {
     const todos = this.state.todos;
@@ -43,6 +49,7 @@ export default class TodoApp extends Component {
               todos={todos}
               handleDeleteTodo={this.handleDeleteTodo}
               handleDeleteAll={this.handleDeleteAll}
+              markTodoDone={this.markTodoDone}
             />
             <AddTodo
               handleAddTodo={this.handleAddTodo}

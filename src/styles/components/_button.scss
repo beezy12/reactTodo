@@ -15,3 +15,12 @@
   color: $off-white;
   padding: 0;
 }
+
+.buttons__todo {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons__todo > button {
+  //margin: $s-size;
+}
