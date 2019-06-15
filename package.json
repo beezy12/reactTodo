@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "live-server public/",
     "build": "webpack",
-    "dev-server": "webpack-dev-server"
+    "dev": "webpack-dev-server"
   },
   "dependencies": {
     "babel-core": "^6.25.0",
